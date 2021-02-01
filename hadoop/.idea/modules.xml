@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/hdfsclient/hdfsclient.iml" filepath="$PROJECT_DIR$/hdfsclient/hdfsclient.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mapreduce/mapreduce.iml" filepath="$PROJECT_DIR$/mapreduce/mapreduce.iml" />
     </modules>
   </component>
 </project>
