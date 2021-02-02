@@ -16,7 +16,6 @@ public class FlowCountMapper extends Mapper<LongWritable, Text, Text, FlowBean> 
         String line = value.toString();
         String[] words = line.split("\t");
         // 手机号
-//        String tel = words[1];
         k.set(words[1]);
         long upFlow = Long.parseLong(words[words.length - 3]);
         long downFlow = Long.parseLong(words[words.length - 2]);

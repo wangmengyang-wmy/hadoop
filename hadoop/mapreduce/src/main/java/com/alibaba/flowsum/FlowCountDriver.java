@@ -18,18 +18,19 @@ public class FlowCountDriver {
 
         job.setJarByClass(FlowCountDriver.class);
 
+        // 关联mapper和reducer
         job.setMapperClass(FlowCountMapper.class);
         job.setReducerClass(FlowCountReducer.class);
-
+        // 设置map阶段输出数据的key和value类型
         job.setMapOutputKeyClass(Text.class);
         job.setMapOutputValueClass(FlowBean.class);
-
+        // 设置最终输出数据的key和value类型
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(FlowBean.class);
-
+        // 设置输入文件和输出文件的路径
         FileInputFormat.setInputPaths(job,new Path(args[0]));
         FileOutputFormat.setOutputPath(job,new Path(args[1]));
-
+        // 提交job，参数为true时会打印job信息
         job.waitForCompletion(true);
     }
 }

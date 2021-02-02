@@ -45,7 +45,7 @@ public class FlowBean implements Writable {
         this.sumFlow = sumFlow;
     }
 
-    // 序列化方法
+    // 序列化方法，在map阶段和最终阶段都会调用这个方法将数据序列化
     @Override
     public void write(DataOutput dataOutput) throws IOException {
         dataOutput.writeLong(upFlow);
@@ -53,7 +53,7 @@ public class FlowBean implements Writable {
         dataOutput.writeLong(sumFlow);
     }
 
-    // 反序列化方法
+    // 反序列化方法，在reduce阶段会调用这个方法读取map阶段输出的数据
     @Override
     public void readFields(DataInput dataInput) throws IOException {
         // 必须要和序列化时的顺序一致
